@@ -1,0 +1,31 @@
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  name: # FYLL INN HER
+  namespace: sommerstudenter2021
+  labels:
+    team: sommerstudenter2021
+spec:
+  image: {{image}} # Fikses av .github/workflows/main.yaml
+  liveness:
+    path: /isalive
+    port: 8080
+    initialDelay: 20
+    timeout: 60
+  readiness:
+    path: /isready
+    port: 8080
+    initialDelay: 20
+    timeout: 60
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  ingresses:
+    - https://<app-name>.dev.intern.nav.no # Fyll inn metedata.name sin verdi her!
+  kafka:
+    # Husk at dere må oppdatere (les: lage PR) her:
+    # <URL to github file>
+    pool: nais-dev
