@@ -27,5 +27,5 @@ spec:
     - https://<app-name>.dev.intern.nav.no # Fyll inn metedata.name sin verdi her!
   kafka:
     # Husk at dere må oppdatere (les: lage PR) her:
-    # <URL to github file>
+    # https://github.com/navikt/sommerstudent-daemon/blob/main/nais/topic-sommerstudent.yaml#L21
     pool: nais-dev

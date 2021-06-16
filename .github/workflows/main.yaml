@@ -1,8 +1,5 @@
 name: Build and deploy kafka-skeleton
-on:
-  push:
-    branches:
-      - main
+on: push
 
 env:
   BASE_IMAGE: ghcr.io/${{ github.repository }}
@@ -11,18 +8,14 @@ env:
 jobs:
   build-test-and-publish:
     name: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - uses: gradle/wrapper-validation-action@v1
-      - uses: actions/setup-java@v2
-        with:
-          java-version: 15
-          distribution: adopt
       - name: Set docker image variables
         run: |
           echo "TAG=$(date "+%Y.%m.%d")-$(git rev-parse --short HEAD)" >> $GITHUB_ENV
           echo "IMAGE=$BASE_IMAGE:$(date "+%Y.%m.%d")-$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
       - name: Build and publish Docker image
         run: |
           docker build --pull --tag ${BASE_IMAGE}:${TAG} --tag ${BASE_IMAGE}:latest .
@@ -30,15 +23,11 @@ jobs:
           docker push ${BASE_IMAGE}:${TAG}
           docker push ${BASE_IMAGE}:latest
 
-  deployAppToDev:
-    name: Deploy to dev
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
       - name: Deploy to DEV
         uses: nais/deploy/actions/deploy@v1
         env:
+          # Denne `NAIS_DEPLOY_APIKEY` må dere selv legge innunder "settings/secrets" på repoet dere har lagd (les: forket)
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
           RESOURCE: nais/nais.yaml
+          IMAGE: ${{ env.IMAGE }}
