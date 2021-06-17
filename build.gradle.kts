@@ -7,7 +7,7 @@ plugins {
 }
 
 val ktor_version = "1.6.0"
-val junit_version = "5.6.0"
+val junit_version = "5.7.2"
 
 group = "no.nav"
 
@@ -29,7 +29,6 @@ dependencies {
     // Logging
     implementation("ch.qos.logback:logback-classic:1.2.3")
     implementation("net.logstash.logback:logstash-logback-encoder:5.1")
-    implementation("org.slf4j:slf4j-api:1.7.25")
 
     // Test
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junit_version")
@@ -57,6 +56,7 @@ tasks {
     withType<ShadowJar> {
         archiveBaseName.set("app")
         archiveClassifier.set("")
+        mergeServiceFiles()
         manifest {
             attributes(
                 mapOf(
@@ -67,7 +67,7 @@ tasks {
     }
 
     withType<Wrapper> {
-        gradleVersion = "7.0.2"
+        gradleVersion = "7.1"
     }
 
 }

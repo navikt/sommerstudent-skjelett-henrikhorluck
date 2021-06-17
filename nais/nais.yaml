@@ -28,4 +28,4 @@ spec:
   kafka:
     # Husk at dere må oppdatere (les: lage PR) her:
     # https://github.com/navikt/sommerstudent-daemon/blob/main/nais/topic-sommerstudent.yaml#L21
-    pool: nais-dev
+    pool: nav-dev
