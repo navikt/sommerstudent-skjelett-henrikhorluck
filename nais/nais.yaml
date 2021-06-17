@@ -17,12 +17,13 @@ spec:
     port: 8080
     initialDelay: 20
     timeout: 60
-  limits:
-    cpu: 200m
-    memory: 256Mi
-  requests:
-    cpu: 100m
-    memory: 128Mi
+  resources:
+    limits:
+      cpu: 200m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
   ingresses:
     - https://<app-name>.dev.intern.nav.no # Fyll inn metedata.name sin verdi her!
   kafka:
