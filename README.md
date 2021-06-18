@@ -21,7 +21,7 @@ Dette repoet inneholder en demo app som har som formål å la sommerstudentene;
 
 Når;
 1. appen mottar en HTTP GET request til `/produce/<en html parset melding>`, skal det 
-2. dukke opp på [grafana URL] at "app `X` har sendt melding til kafka-topic `sommer-kafka`!"
+2. dukke opp på [grafana URL](https://grafana.nais.io/d/Ke8RDTgnz/sommerstudent-daemon2021?orgId=1) at "app `X` har sendt melding til kafka-topic `sommer-kafka`!"
 
 ## Pre-requisites
 
@@ -34,7 +34,7 @@ Enhver sommerstudent må ha;
     - Følge løpet og sette opp `KUBECONFIG` miljøvariabel ihht. [doc.nais.io](https://doc.nais.io/basics/access/#setup-your-kubeconfig)
 5. `git` installert og tilgjengelig i terminal, samt author og ssh nøkler satt hhv. lokalt og hos github
 6. Lagt seg til i `navikt` Github orgen på [NAV myapps](https://myapplications.microsoft.com/)
-7. `java` jdk installert (les: `JAVA_HOME` må fungere i samarbeid med [gradlew(.bat)](gradlew)
+7. `java` jdk installert (les: `JAVA_HOME` må fungere i samarbeid med [gradlew[.bat]](gradlew)
 8. Zoom installert
 9. Være lagt til `sommerstudenter2021` gruppen tilgjengelig på [mygroups.microsoft.com](https://mygroups.microsoft.com) når logget inn med sin NAV AD bruker
 
