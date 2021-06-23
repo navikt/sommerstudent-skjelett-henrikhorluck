@@ -4,6 +4,15 @@
 
 Enhver sommerstudent skal;
 1. Forke dette repoet til et nytt et innenfor NAVIKT
+    - Dette må gjøres manuelt, noe á la:
+        1. Lag nytt repo manuelt innenfor NAVIKT (putt gjerne ditt github brukernavn inn i repo navnet)
+        2. Utfør følgende i en terminal:
+            ```bash
+            git clone git@github.com:navikt/skeleton-app-sommerstudenter2021.git
+            cd skeleton-app-sommerstudenter2021
+            git remote set-url origin git@github.com:navikt/<ditt nye repo navn>.git
+            git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+            ```
 2. Legge inn sitt Github brukernavn i [nais/nais.yaml](nais/nais.yaml): [her](nais/nais.yaml#L4) og [her](nais/nais.yaml#L30)
     - Legge til app på topic-ressurs referert til i [nais/nais.yaml](nais/nais.yaml#30), vha. PR
 3. Skrive Kotlin kode i fil [ProduceRoute.kt](src/main/kotlin/no/nav/ProduceRoute.kt#L17)
