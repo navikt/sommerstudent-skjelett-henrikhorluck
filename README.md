@@ -6,6 +6,7 @@ Enhver sommerstudent skal;
 1. Forke dette repoet til et nytt et innenfor NAVIKT
     - Dette må gjøres manuelt, noe á la:
         1. Lag nytt repo manuelt innenfor NAVIKT (putt gjerne ditt github brukernavn inn i repo navnet)
+            - _Uten_ å lage README, gitignore, eller noe annet som lager commits. Må være "tomt".
         2. Utfør følgende i en terminal:
             ```bash
             git clone git@github.com:navikt/skeleton-app-sommerstudenter2021.git
