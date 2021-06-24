@@ -15,7 +15,7 @@ Enhver sommerstudent skal;
             git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
             ```
 2. Legge inn sitt Github brukernavn i [nais/nais.yaml](nais/nais.yaml): [her](nais/nais.yaml#L4)
-    - Legge til appen med Github brukernavnet på topic-ressurs referert til i [nais/nais.yaml](nais/nais.yaml#L30), vha. PR til [navikt/sommerstudent-daemon](https://github.com/navikt/sommerstudent-daemon/blob/main/nais/topic-sommerstudent.yaml#L21)
+    - På topic-ressursen referert til i [navikt/sommerstudent-daemon](https://github.com/navikt/sommerstudent-daemon/blob/main/nais/topic-sommerstudent.yaml#L21), legg inn deres nå navngitte app vha. PR.
 3. Skrive Kotlin kode i fil [ProduceRoute.kt](src/main/kotlin/no/nav/ProduceRoute.kt#L17)
     - [Kode](https://github.com/confluentinc/examples/blob/6.1.1-post/clients/cloud/kotlin/src/main/kotlin/io/confluent/examples/clients/cloud/ProducerExample.kt#L73) man kan ta utgangspunkt i
 4. Legge inn [`NAIS_DEPLOY_KEY`](nais/nais.yaml#L30)en tilhørende namespacet `sommerstudenter2021` som hemmelighet i sitt forkede repo (finnes her: [NAIS deploys](https://deploy.nais.io))
@@ -44,7 +44,7 @@ Enhver sommerstudent må ha;
     - Følge løpet og sette opp `KUBECONFIG` miljøvariabel ihht. [doc.nais.io](https://doc.nais.io/basics/access/#setup-your-kubeconfig)
 5. `git` installert og tilgjengelig i terminal, samt author og ssh nøkler satt hhv. lokalt og hos github
 6. Lagt seg til i `navikt` Github orgen på [NAV myapps](https://myapplications.microsoft.com/)
-7. `java` jdk installert (les: `JAVA_HOME` må fungere i samarbeid med [gradlew[.bat]](gradlew)
+7. `java` jdk installert (les: `JAVA_HOME` må fungere i samarbeid med [gradlew[.bat]](gradlew))
 8. Zoom installert
 9. Være lagt til `sommerstudenter2021` gruppen tilgjengelig på [mygroups.microsoft.com](https://mygroups.microsoft.com) når logget inn med sin NAV AD bruker
 
