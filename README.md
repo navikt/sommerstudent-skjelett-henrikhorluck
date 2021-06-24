@@ -14,8 +14,8 @@ Enhver sommerstudent skal;
             git remote set-url origin git@github.com:navikt/<ditt nye repo navn>.git
             git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
             ```
-2. Legge inn sitt Github brukernavn i [nais/nais.yaml](nais/nais.yaml): [her](nais/nais.yaml#L4) og [her](nais/nais.yaml#L30)
-    - Legge til app på topic-ressurs referert til i [nais/nais.yaml](nais/nais.yaml#30), vha. PR
+2. Legge inn sitt Github brukernavn i [nais/nais.yaml](nais/nais.yaml): [her](nais/nais.yaml#L4)
+    - Legge til appen med Github brukernavnet på topic-ressurs referert til i [nais/nais.yaml](nais/nais.yaml#L30), vha. PR til [navikt/sommerstudent-daemon](https://github.com/navikt/sommerstudent-daemon/blob/main/nais/topic-sommerstudent.yaml#L21)
 3. Skrive Kotlin kode i fil [ProduceRoute.kt](src/main/kotlin/no/nav/ProduceRoute.kt#L17)
     - [Kode](https://github.com/confluentinc/examples/blob/6.1.1-post/clients/cloud/kotlin/src/main/kotlin/io/confluent/examples/clients/cloud/ProducerExample.kt#L73) man kan ta utgangspunkt i
 4. Legge inn [`NAIS_DEPLOY_KEY`](nais/nais.yaml#L30)en tilhørende namespacet `sommerstudenter2021` som hemmelighet i sitt forkede repo (finnes her: [NAIS deploys](https://deploy.nais.io))
