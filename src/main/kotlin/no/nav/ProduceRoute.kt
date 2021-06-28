@@ -26,7 +26,7 @@ fun Route.ProduceMessage() {
             val payload = """
                     {
                        "id":"$id",
-                       "user":"henrikhorluck",
+                       "user":"sommerstudent-skjelett-henrikhorluck",
                        "namespace":"best namespace",
                        "message":"$message"
                     }
