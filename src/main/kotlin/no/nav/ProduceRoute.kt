@@ -19,7 +19,7 @@ fun Route.ProduceMessage() {
 
         KafkaProducer<String, String>(getKafkaConfig()).use { producer ->
             val topic = "omsorgspenger.sommerstudent-kafka"
-            val key = "sommerstudent-skjelett-henrikhorluck"
+            val key = "kafka-skeleton"
             val id = UUID.randomUUID().toString()
 
             @Language("JSON")
